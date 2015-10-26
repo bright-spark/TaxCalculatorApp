@@ -1,0 +1,23 @@
+{
+    "compilerOptions": { 
+        "noImplicitAny": false,
+        "noEmitOnError": true,
+        "removeComments": false,
+        "sourceMap": true,
+        "out": "www/scripts/app.js",
+        "target": "es5"
+    },
+    "files": [
+        "app/blocks/logging/logging.module.ts",
+        "app/blocks/logging/logger.service.ts",
+        "app/blocks/exception-handling/exception-handling.module.ts",
+        "app/blocks/exception-handling/exception.ts",
+        "app/blocks/exception-handling/exception-handler.provider.ts",
+        "app/core/core.module.ts",
+        "app/core/core.config.ts",
+        "app/core/core.route.ts",
+        "app/layout/layout.module.ts",
+        "app/layout/calculator.controller.ts",
+        "app/app.module.ts"
+    ]
+}

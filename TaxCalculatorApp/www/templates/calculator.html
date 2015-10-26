@@ -1,0 +1,24 @@
+﻿<ion-view view-title="{{vm.title}}">
+    <ion-content>
+        <form  name="calculatorForm" novalidate>
+            <div class="list">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Net value</span>
+                    <input type="number" name="net_input" placeholder="Type the net value" step="0.01" ng-required="true" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" ng-model="vm.valor" ng-change="vm.onChange()">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Tax percent.</span>
+                    <input type="number" name="tax_input" placeholder="Type the tax percent." step="0.01" ng-required="true" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" ng-model="vm.porcentaje" ng-change="vm.onChange()">
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Gross price</span>
+                    <input type="number" name="gross_input" placeholder="Type the gross value" step="0.01" ng-required="true" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" ng-model="vm.total" ng-change="vm.onChangeTotal()">
+                </label>
+            </div>
+            <div class="padding text-center">
+                <h2 ng-show="calculatorForm.net_input.$dirty && (calculatorForm.net_input.$invalid || calculatorForm.tax_input.$invalid || calculatorForm.gross_input.$invalid)">Not a valid number!</h2>
+                <h2 ng-show="calculatorForm.net_input.$pristine || (calculatorForm.net_input.$valid && calculatorForm.tax_input.$valid && calculatorForm.gross_input.$valid)">Your taxes are {{vm.impuestos}}!</h2>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
